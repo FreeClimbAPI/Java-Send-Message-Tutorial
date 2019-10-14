@@ -1,4 +1,4 @@
-# Node - Send SMS During Call Tutorial
+# Java - Send SMS During Call Tutorial
 
 This project serves as a guide to help you build an application with Persephony. Specifically, the project will:
 
@@ -21,9 +21,8 @@ To get started using a persephony account, follow the instructions [here](https:
 
    | ENV VARIABLE            | DESCRIPTION                                                                                                                                                                             |
    | ----------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-   | ACCOUNT_ID              | Account ID which can be found under [API Keys](https://www.persephony.com/dashboard/portal/account/authentication) in Dashboard                                                         |
-   | AUTH_TOKEN              | Authentication Token which can be found under [API Keys](https://www.persephony.com/dashboard/portal/account/authentication) in Dashboard                                               |
-   | HOST | The url of where your app is being hosted (e.g. yourHostedApp.com) |
+   | PERSEPHONY_PHONE_NUMBER | The persephony number that is being used to make a phone call. To learn more go [here](https://docs.persephony.com/docs/getting-started-with-persephony#section-2-get-a-phone-number) |
+   | HOST | URL where your app is being hosted |
 
 ## Building and Runnning the Tutorial
 
