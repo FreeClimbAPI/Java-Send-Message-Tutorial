@@ -3,7 +3,7 @@
 This project serves as a guide to help you build an application with Persephony. Specifically, the project will:
 
 - Accepts incoming calls
-- Sends text messages to callers   
+- Sends text messages to callers
 
 ## Setting up your new app within your Persephony account
 
@@ -11,18 +11,12 @@ To get started using a persephony account, follow the instructions [here](https:
 
 ## Setting up the Tutorial
 
-1. Install the node packages necessary using command:
+1. Configure environment variables.
 
-   ```bash
-   $ yarn install
-   ```
-
-2. Configure environment variables.
-
-   | ENV VARIABLE            | DESCRIPTION                                                                                                                                                                             |
-   | ----------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+   | ENV VARIABLE            | DESCRIPTION                                                                                                                                                                           |
+   | ----------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
    | PERSEPHONY_PHONE_NUMBER | The persephony number that is being used to make a phone call. To learn more go [here](https://docs.persephony.com/docs/getting-started-with-persephony#section-2-get-a-phone-number) |
-   | HOST | URL where your app is being hosted |
+   | HOST                    | URL where your app is being hosted                                                                                                                                                    |
 
 ## Building and Runnning the Tutorial
 
