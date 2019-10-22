@@ -6,16 +6,16 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import com.vailsys.persephony.api.PersyException;
-import com.vailsys.persephony.api.message.Status;
-import com.vailsys.persephony.percl.PerCLScript;
-import com.vailsys.persephony.percl.Sms;
-import com.vailsys.persephony.webhooks.call.VoiceCallback;
-import com.vailsys.persephony.webhooks.message.MessageStatus;
+import com.vailsys.freeclimb.api.FreeClimbException;
+import com.vailsys.freeclimb.api.message.Status;
+import com.vailsys.freeclimb.percl.PerCLScript;
+import com.vailsys.freeclimb.percl.Sms;
+import com.vailsys.freeclimb.webhooks.call.VoiceCallback;
+import com.vailsys.freeclimb.webhooks.message.MessageStatus;
 
 @RestController
 public class SendAMessage {
-  private final String fromNumber = System.getenv("PERSEPHONY_PHONE_NUMBER");
+  private final String fromNumber = System.getenv("FREE_CLIMB_PHONE_NUMBER");
   private final String notificationUrl = String.format("%s/notificationUrl", System.getenv("HOST"));
 
   @RequestMapping(value = {
@@ -30,7 +30,7 @@ public class SendAMessage {
       PerCLScript script = new PerCLScript();
 
       // send an sms message to the caller
-      Sms sms = new Sms(voiceCallback.getFrom(), fromNumber, "Hello from Persephony");
+      Sms sms = new Sms(voiceCallback.getFrom(), fromNumber, "Hello from FreeClimb");
 
       // set notificationUrl for when the message changes status
       sms.setNotificationUrl(notificationUrl);
@@ -38,7 +38,7 @@ public class SendAMessage {
       script.add(sms);
 
       return script.toJson();
-    } catch (PersyException pe) {
+    } catch (FreeClimbException pe) {
       // handle errors
     }
 
@@ -57,7 +57,7 @@ public class SendAMessage {
       if (status == Status.FAILED || status == Status.REJECTED) {
         // message Failed to send
       }
-    } catch (PersyException e) {
+    } catch (FreeClimbException e) {
       // handle errors
     }
     return "[]";
